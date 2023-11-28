@@ -7,7 +7,7 @@
                     <div class="row">
                         <div class="col-md-4">
                             <div class="mb-3 mb-md-0">
-                                <select class="custom-select px-4" style="height: 47px;" onchange="quoteProduct()" id="products">
+                                <select class="custom-select px-4" style="height: 47px;" id="select-products">
                                     <option value="1" selected>Seleccione un producto</option>
                                     <option value="Ventana">Ventana</option>
                                     <option value="Puerta">Puerta</option>
@@ -29,7 +29,7 @@
                             </div>
                         </div>
                         <div class="col-md-2">
-                            <button class="btn btn-primary btn-block" type="submit" style="height: 47px; margin-top: -2px;" onclick="quote()">Calcular</button>
+                            <button class="btn btn-primary btn-block" type="submit" style="height: 47px; margin-top: -2px;" id="btn-calculate">Calcular</button>
                         </div>
                     </div>
                 </div>
@@ -46,8 +46,7 @@
             <p id="height-price"></p>
             <p id="sides"></p>
             <p id="total"></p>
-            <button class="btn btn-primary" hidden="" onclick="sendQuote()" id="btn-quote">Enviar Cotización</button>
-            <button class="btn btn-primary" hidden="" onclick="sendQuote()" id="btn-quote">Enviar Cotización</button>
+            <button class="btn btn-primary" hidden="" id="btn-quote">Enviar Cotización</button>
         </div>
     </div>
 </center>

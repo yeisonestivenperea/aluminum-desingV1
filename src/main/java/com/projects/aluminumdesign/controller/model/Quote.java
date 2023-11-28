@@ -43,6 +43,9 @@ public class Quote {
 
     @Column(name = "side_price")
     private float sidePrice;
+    
+    @Column(name = "side")
+    private float side;
 
     @Column(name = "total")
     private float total;
@@ -52,6 +55,9 @@ public class Quote {
     
     @Column(name = "height")
     private float height;
+    
+    @Column(name = "state")
+    private boolean state;
 
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "created_at")

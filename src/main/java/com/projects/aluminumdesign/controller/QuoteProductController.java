@@ -20,11 +20,10 @@ public class QuoteProductController {
 
     @Autowired
     private PriceService priceService;
-    
+
     @Autowired
     private QuoteService quoteService;
 
-    
     @GetMapping("/quote")
     public String quote(Model model) {
         model.addAttribute("message_page", "Cotizar");
@@ -56,14 +55,24 @@ public class QuoteProductController {
     @PostMapping("/save-quote")
     @ResponseBody
     public String saveQuote(@RequestBody Quote quote) {
-
-        System.out.println("quote" + quote.toString());
-        
+        quote.setState(false);
+        quote.setSide(quote.getHeight());
         if (quoteService.save(quote).getId() > 0) {
             return "ok," + quoteService.save(quote).getId();
-        }else{
+        } else {
             return "error";
         }
+    }
+
+    @GetMapping("/quote-list")
+    public String quoteList() {
+        return "page_quote_list";
+    }
+
+    @PostMapping("/quote-list-all")
+    @ResponseBody
+    public List<Quote> quoteListAll() {
+        return quoteService.getAllQuotes();
     }
 
 }
