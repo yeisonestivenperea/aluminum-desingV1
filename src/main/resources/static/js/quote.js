@@ -28,6 +28,7 @@ function quote() {
         // Restablecer el contenido antes de agregar las nuevas dimensiones
         selectElement = document.getElementById('products').value;
         productName.innerText = 'Dimensiones del producto: ' + selectElement + ' ' + width + 'X' + height;
+        $("#btn-quote").show();
 
         var product = {
             productName: selectElement,
@@ -104,6 +105,8 @@ function sendQuote() {
                             height = document.getElementById('height');
                             height.value = '';
                             productName.innerText = '';
+                            $("#btn-quote").hide();
+                            
 
                         } else if (response === 'error') {
                             Swal.fire("Ocurrió un error", "", "warning");
